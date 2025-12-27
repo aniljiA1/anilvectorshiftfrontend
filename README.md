@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+🚀 VectorShift Pipeline Builder – Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the frontend implementation for the VectorShift Frontend Technical Assessment.
+It is a visual pipeline builder built using React and React Flow, allowing users to create node-based workflows and validate them via backend integration.
 
-## Available Scripts
+🛠 Tech Stack
 
-In the project directory, you can run:
+React (CRA)
 
-### `npm start`
+React Flow
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Zustand (state management)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+JavaScript (ES6+)
 
-### `npm test`
+CSS (index.css)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+FastAPI Backend (integration)
 
-### `npm run build`
+✨ Features
+✅ Node Abstraction (Part 1)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Created a reusable BaseNode component
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Reduced duplication across node implementations
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Easy to scale and add new nodes
 
-### `npm run eject`
+Available Nodes:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Input
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+LLM
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Output
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Text
 
-## Learn More
+Math
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Condition
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Delay
 
-### Code Splitting
+API Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Logger
 
-### Analyzing the Bundle Size
+🎨 Styling (Part 2)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Unified, clean UI design
 
-### Making a Progressive Web App
+Consistent node layout and spacing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Grid snapping, minimap, and controls via React Flow
 
-### Advanced Configuration
+🧠 Text Node Enhancements (Part 3)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Auto-resizing textarea (height grows with content)
 
-### Deployment
+Dynamic variable detection using {{ variable }}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Automatically generates input handles for detected variables
 
-### `npm run build` fails to minify
+Example:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Hello {{name}}, your score is {{score}}
+
+
+➡️ Creates two dynamic input handles: name, score
+
+🔌 Backend Integration (Part 4)
+
+Sends pipeline graph (nodes & edges) to backend
+
+Receives:
+
+Total number of nodes
+
+Total number of edges
+
+DAG validation result
+
+Displays results in a user-friendly alert
+
+
+Pipeline UI
+
+Text node with dynamic handles
+
+Submit alert result
+
+
+2️⃣ Install dependencies
+npm install
+
+3️⃣ Start the app
+npm start
+
+
+Frontend will run at:
+
+http://localhost:3000
+
+Live deploy: https://anilvectorshiftfrontend.vercel.app
