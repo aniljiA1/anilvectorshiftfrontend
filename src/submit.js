@@ -5,7 +5,7 @@ export const SubmitButton = () => {
   const edges = useStore((state) => state.edges);
 
   const handleSubmit = async () => {
-    const res = await fetch("http://127.0.0.1:8000/pipelines/parse", {
+    const res = await fetch("https://anilvectorshiftbackend.onrender.com/pipelines/parse" || "http://127.0.0.1:8000/pipelines/parse", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ nodes, edges }),
